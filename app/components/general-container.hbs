@@ -1,0 +1,12 @@
+<header class="p-3">
+  <LinkTo @route="index">
+    <h1 title="back to homepage">Ember Goods</h1>
+  </LinkTo>
+    <LinkTo @route="cart" class="cart-link">
+<i title="shopping cart" class="fa fa-shopping-cart"></i>
+</LinkTo>
+</header>
+<main class="container mt-3">
+  {{yield}}
+</main>
+

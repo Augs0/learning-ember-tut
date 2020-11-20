@@ -1,0 +1,33 @@
+<header class="p-3">
+  <h1>Ember Goods</h1>
+    <nav>
+      <ul class="breadcrumb">
+        <li class="breadcrumb-item">
+          <<LinkTo @route="index">
+                 Home
+          </LinkTo>
+        </li>
+        <li class="breadcrumb-item">
+          Shopping Cart
+        </li>
+      </ul>
+    </nav>
+</header>
+<main class="container">
+  <section class="w-50 text-right ml-auto mb-5">
+    <h2>Price Breakdown</h2>
+    <div class="row">
+      <span class="col">Subtotal</span>
+      <span class="col">{{this.subtotal}}</span>
+    </div>
+    <div class="row">
+      <span class="col">Shipping</span>
+      <span class="col">{{this.shipping}}</span>
+    </div>
+    <div class="row">
+      <span class="col">Total</span>
+      <span class="col">{{this.total}}</span>
+    </div>
+  </section>
+  <button type="button" class="float-right btn btn-lg btn-success">Check out</button>
+</main>
