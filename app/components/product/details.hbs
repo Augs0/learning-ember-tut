@@ -18,12 +18,17 @@
           <p id="currprice" class="text-danger"><strong>{{currency @price.current}}</strong></p>
         </div>
         {{#if  @isDetails}}
-          <div class="active-{{@colour}}">
-          <h3>Colour Options</h3>
-          {{#each @colours as |colourInfo|}}
+          <div class="active-{{@colour}} d-flex justify-content-between align-items-end">
+          <div class="colour-box">
+            <h3 class="subtitle">Colour Options</h3>
+              {{#each @colours as |colourInfo|}}
             <label class="sr-only" for={{colourInfo.colour}}>{{colourInfo.colour}}</label>
           <span id={{colourInfo.colour}} class="product-colour {{concat  "product-" colourInfo.colour}}" {{on "click" (fn @onChangeColour colourInfo.colour)}}></span>
           {{/each}}
+          </div>
+          <button class="btn btn-info" {{on "click" this.addToCart}}>
+            Add to cart
+          </button>
           </div>
         {{/if}}
 

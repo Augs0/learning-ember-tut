@@ -15,3 +15,19 @@
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
 }
+
+.cart-count {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  font-size: 14px;
+  color: ghostwhite;
+  background-color: darkcyan;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}

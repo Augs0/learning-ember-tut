@@ -3,7 +3,7 @@
     <nav>
       <ul class="breadcrumb">
         <li class="breadcrumb-item">
-          <<LinkTo @route="index">
+          <LinkTo @route="index">
                  Home
           </LinkTo>
         </li>
@@ -14,6 +14,11 @@
     </nav>
 </header>
 <main class="container">
+  {{#each this.shoppingCart.itemList as |item|}}
+      <div class="d-flex align-items-center">
+        <p>{{item.name}}</p>
+      </div>
+  {{/each}}
   <section class="w-50 text-right ml-auto mb-5">
     <h2>Price Breakdown</h2>
     <div class="row">
