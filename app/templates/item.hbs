@@ -1,16 +1,22 @@
 <GeneralContainer>
-   <div class="product item-details-page">
-     <Product::Image/>
-     <Product::Details/>
+   <div class="product item-details-page {{if this.isZoomed 'is-zoomed'}}">
+     <Product::Image
+      @src={{this.productImage}}
+      @toggleZoom={{this.toggleZoom}}
+      />
+     <Product::Details
+     @isDetails={{true}}
+     @name = {{this.model.name}}
+     @price = {{this.model.price}}
+     @colours = {{this.model.colours}}
+     @colour={{this.colour}} @onChangeColour={{this.onChangeColour}}/>
    </div>
    <div class="features">
      <h3>Features</h3>
      <ul class="mt-5 list-group">
-       <li class="list-group-item mt-2 mb-2">Lorem ipsum dolor sit.</li>
-       <li class="list-group-item mt-2 mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, sapiente.</li>
-       <li class="list-group-item mt-2 mb-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</li>
-       <li class="list-group-item mt-2 mb-2">Lorem ipsum dolor sit.</li>
-       <li class="list-group-item mt-2 mb-2">Lorem, ipsum.</li>
+        {{#each this.model.features as |feature|}}
+          <li class="list-group-item mt-2 mb-2">{{feature}}</li>
+        {{/each}}
      </ul>
    </div>
 </GeneralContainer>

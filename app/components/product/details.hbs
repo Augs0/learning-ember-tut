@@ -1,17 +1,31 @@
  <div class="product-details">
         <section>
-          <h3>Classical violin</h3>
+          <h2 class="sr-only">Product details</h2>
+          <h2>{{@name}}</h2>
           <div class="rating">
-            <i class="fa fa-star"></i>
-             <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-               <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-o"></i>
+             <span class="sr-only">Customer rating</span>
+            <i class="fa fa-star"  aria-label="one star"></i>
+             <i class="fa fa-star" aria-label="two star"></i>
+              <i class="fa fa-star" aria-label="three star"></i>
+               <i class="fa fa-star" aria-label="four star"></i>
+                <i class="fa fa-star-half-o" aria-label="half a star"></i>
           </div>
-        </section>
-        <section>
+        <div class={{unless @isDetails 'lead'  }}>
           <h3 class="sr-only">Price</h3>
-          <p class="text-black small"><s>£250</s></p>
-          <p class="text-danger font-weight-bold">£200</p>
+          <label for="prevprice" class="sr-only">Previous price</label>
+          <p id="prevprice" class="text-black small"><s>{{currency @price.original}}</s></p>
+          <label for="currprice" class="sr-only">Current price</label>
+          <p id="currprice" class="text-danger"><strong>{{currency @price.current}}</strong></p>
+        </div>
+        {{#if  @isDetails}}
+          <div class="active-{{@colour}}">
+          <h3>Colour Options</h3>
+          {{#each @colours as |colourInfo|}}
+            <label class="sr-only" for={{colourInfo.colour}}>{{colourInfo.colour}}</label>
+          <span id={{colourInfo.colour}} class="product-colour {{concat  "product-" colourInfo.colour}}" {{on "click" (fn @onChangeColour colourInfo.colour)}}></span>
+          {{/each}}
+          </div>
+        {{/if}}
+
         </section>
       </div>

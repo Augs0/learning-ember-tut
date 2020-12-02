@@ -18,15 +18,15 @@
     <h2>Price Breakdown</h2>
     <div class="row">
       <span class="col">Subtotal</span>
-      <span class="col">{{this.subtotal}}</span>
+      <span class="col">{{currency this.subtotal}}</span>
     </div>
     <div class="row">
       <span class="col">Shipping</span>
-      <span class="col">{{this.shipping}}</span>
+      <span class="col">{{currency this.shipping}}</span>
     </div>
     <div class="row">
       <span class="col">Total</span>
-      <span class="col">{{this.total}}</span>
+      <span class="col">{{currency this.total}}</span>
     </div>
   </section>
   <button type="button" class="float-right btn btn-lg btn-success">Check out</button>

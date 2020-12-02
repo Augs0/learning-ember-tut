@@ -2,7 +2,7 @@
   "name": "emberjs-project",
   "version": "0.0.0",
   "private": true,
-  "description": "Small description for emberjs-project goes here",
+  "description": "Basic eCommerce app based on Shawn Chen tut",
   "repository": "",
   "license": "MIT",
   "author": "",
@@ -25,6 +25,7 @@
     "@glimmer/tracking": "^1.0.2",
     "babel-eslint": "^10.1.0",
     "broccoli-asset-rev": "^3.0.0",
+    "ember-a11y-testing": "^4.0.0",
     "ember-auto-import": "^1.6.0",
     "ember-cli": "~3.22.0",
     "ember-cli-app-version": "^4.0.0",
@@ -58,5 +59,8 @@
   },
   "ember": {
     "edition": "octane"
+  },
+  "dependencies": {
+    "@ember/test-helpers": "^2.1.0"
   }
 }
