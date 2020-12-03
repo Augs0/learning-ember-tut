@@ -15,8 +15,27 @@
 </header>
 <main class="container">
   {{#each this.shoppingCart.itemList as |item|}}
-      <div class="d-flex align-items-center">
-        <p>{{item.name}}</p>
+      <div class="cart-item mb-4 d-flex align-items-center">
+        <div class="cart-thumbnail">
+          <img src={{item.image}} alt="product image">
+        </div>
+     <div class="mt-3">
+          <p>{{item.name}}</p>
+        <p>{{currency item.price}}</p>
+     </div>
+     <div class="flex-column m-3">
+         <span role="alert" class="warning bg-danger"></span>
+     <label class="sr-only" for="itemCount">The number of this item in your basket</label>
+     <input
+     class="ml-auto"
+     type="number"
+     name="itemCount"
+     id="itemCount"
+     value={{item.count}}
+     {{on "input" (fn this.updateItemCount item)}}
+     >
+     </div>
+
       </div>
   {{/each}}
   <section class="w-50 text-right ml-auto mb-5">
