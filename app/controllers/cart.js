@@ -10,7 +10,7 @@ export default class CartController extends Controller {
     }, 0);
   }
   get shipping() {
-    return this.subtotal / 4;
+    return this.subtotal / 6;
   }
 
   get total() {
